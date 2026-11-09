@@ -29,7 +29,7 @@ useEffect(() => {
 
   function handleSuggest() {
     if (selected.length === 0) {
-        setError('Select at lest one ingredient')
+        setError('Select at least one ingredient')
         return
     }
     suggestCocktails(selected)
