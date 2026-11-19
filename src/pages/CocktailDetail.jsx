@@ -47,6 +47,14 @@ function CocktailDetail(){
           <h1 className="h3 mb-0">{cocktail.name}</h1>
           <Link className="btn btn-outline-dark" to="/">Back to list</Link>
         </div>
+        {cocktail.image_url && (
+          <img 
+            src={cocktail.image_url} 
+            alt={cocktail.name}
+            className="img-fluid rounded mb-3"
+            style={{maxHeight: '280px', objectFit: 'cover'}}
+          />
+        )}
 
         <p className="text-muted">
           {cocktail.glass || 'No glass'} · {cocktail.category || 'Uncategorised'}

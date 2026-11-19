@@ -27,7 +27,7 @@ function CocktailList() {
 
             <input className="form-control mb-3"
                     placeholder="Search by name"
-                    vlue={query}
+                    value={query}
                     onChange={(event) => {
                         setQuery(event.target.value) 
                         setLoading(true)}}
@@ -44,8 +44,17 @@ function CocktailList() {
                     {cocktails.map((cocktail) => (
                         <div className="col-md-4" key={cocktail.id}>
                             <div className="card h-100">
+                                {cocktail.image_url && (
+                                <img 
+                                    src={cocktail.image_url}
+                                    className="card-img-top"
+                                    alt={cocktail.name}
+                                    style={{height: '180px', objectFit: 'cover'}}
+                                />
+                                )}
                                 <div className="card-body d-flex flex-column">
                                     <h2 className="h5 card-title">{cocktail.name}</h2>
+
                                     <p className="card-text small text-muted mb-3">
                                         {cocktail.category || 'Uncategorised'}
                                     </p>
